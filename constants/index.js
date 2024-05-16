@@ -27,4 +27,8 @@ export const muscleCategory = [
         name: 'back',
         image: require('../assets/images/splash.png'),
     },
+    {
+        name: 'back',
+        image: require('../assets/images/splash.png'),
+    },
 ]
