@@ -47,7 +47,7 @@ export default function Login() {
                 height: hp(5.5),
                 width: wp(5.5),
             }}>
-                 <Icon name="home-outline" size={40} />
+                 <Icon name="home-outline" size={26} />
             </TouchableOpacity>
             <View className="h-full w-full flex justify-around pt-40 pb-10">
                 <View className="flex items-center mx-4 space-y-4">

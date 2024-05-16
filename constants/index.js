@@ -1,34 +1,42 @@
 export const carImages= [
-   require('../assets/images/splash.png'),
-   require('../assets/images/splash.png'),
-   require('../assets/images/splash.png'),
-   require('../assets/images/splash.png'),
+   require('../assets/images/gym.jpeg'),
+   require('../assets/images/gym.jpeg'),
+   require('../assets/images/gym.jpeg'),
+   require('../assets/images/gym.jpeg'),
 ]
 
 export const muscleCategory = [
     {
-        name: 'back',
-        image: require('../assets/images/splash.png'),
+        name: 'arms',
+        image: require('../assets/images/general.jpeg'),
     },
     {
-        name: 'back',
-        image: require('../assets/images/splash.png'),
+        name: 'legs',
+        image: require('../assets/images/general.jpeg'),
     },
 
     {
         name: 'back',
-        image: require('../assets/images/splash.png'),
+        image: require('../assets/images/general.jpeg'),
     },
     {
-        name: 'back',
-        image: require('../assets/images/splash.png'),
+        name: 'abs',
+        image: require('../assets/images/general.jpeg'),
     },
     {
-        name: 'back',
-        image: require('../assets/images/splash.png'),
+        name: 'cardio',
+        image: require('../assets/images/general.jpeg'),
     },
     {
-        name: 'back',
-        image: require('../assets/images/splash.png'),
+        name: 'clutes',
+        image: require('../assets/images/general.jpeg'),
+    },
+    {
+        name: 'push',
+        image: require('../assets/images/general.jpeg'),
+    },
+    {
+        name: 'pull',
+        image: require('../assets/images/general.jpeg'),
     },
 ]

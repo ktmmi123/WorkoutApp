@@ -45,7 +45,7 @@ export default function Register() {
             })
             .then(() => {
                 Alert.alert("Success", "User registered and profile created.");
-                router.push('/home'); 
+                router.push('/home');
             })
             .catch(error => {
                 Alert.alert('Registration Error', error.message);
@@ -57,14 +57,14 @@ export default function Register() {
             <Image className="h-full w-full absolute" source={require('../assets/images/loginregbg.jpeg')} />
             <StatusBar style="light" />
             <TouchableOpacity onPress={() => router.push('/')} style={styles.homeIcon}>
-                <Ionicons name="home" size={25} color="black" />
+                <Ionicons name="home-outline" size={26} color="black" />
             </TouchableOpacity>
 
             <View style={styles.form}>
                 <TextInput style={styles.input} placeholder='Email' placeholderTextColor='#4a5759' value={email} onChangeText={setEmail} keyboardType='email-address' autoCapitalize='none' />
                 <TextInput style={styles.input} textContentType='oneTimeCode' secureTextEntry={true} placeholder='Password' placeholderTextColor='#4a5759' value={password} onChangeText={setPassword} />
                 <TextInput style={styles.input} secureTextEntry={true} placeholder='Confirm Password' placeholderTextColor='#4a5759' value={confirmPassword} onChangeText={setConfirmPassword} />
-                
+
                 <TouchableOpacity onPress={handleRegister} style={styles.signUpButton}>
                     <Text>Sign Up</Text>
                 </TouchableOpacity>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     input: {
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(0,0,0,0)',
         borderRadius: 10,
         borderWidth: 2,
         borderColor: '#8a817c',
