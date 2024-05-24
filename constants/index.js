@@ -28,7 +28,7 @@ export const muscleCategory = [
         image: require('../assets/images/general.jpeg'),
     },
     {
-        name: 'clutes',
+        name: 'glutes',
         image: require('../assets/images/general.jpeg'),
     },
     {

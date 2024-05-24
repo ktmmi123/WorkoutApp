@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Image, FlatList, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet, ImageBackground, TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 
 
 const favouriteVideos = [
@@ -25,9 +25,10 @@ export default function Favourites() {
   const router = useRouter();
 
   return (
-    <SafeAreaView style={styles.container} >
-      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
-      <ImageBackground source={require('../assets/images/loginregbg.jpeg')} style={styles.backgroundImage}>
+    <View style={styles.container} >
+      <Image className="h-full w-full absolute" source={require('../assets/images/loginregbg.jpeg')} />
+      <StatusBar style="light"/>
+      
         <View style={styles.header}>
           <TouchableOpacity onPress={() => router.push('/home')} style={styles.backButton}>
             <Icon name="arrow-back" size={24} color="#fff" />
@@ -44,20 +45,20 @@ export default function Favourites() {
         ) : (
           <Text style={styles.noItemsText}>No favourite videos available.</Text>
         )}
-      </ImageBackground>
-    </SafeAreaView>
+      
+    </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 20,
+    marginTop:70,
   },
   headerText: {
     fontSize: 24,

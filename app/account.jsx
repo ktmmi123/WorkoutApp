@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, Alert, Image, StatusBar } from 'react-native';
+import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { auth, db, updateUserProfile, storage } from '../firebase';
 import { doc, getDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useRouter } from 'expo-router';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { StatusBar } from 'expo-status-bar';
 
 
 export default function Account() {
@@ -106,26 +107,16 @@ export default function Account() {
             fontWeight: 'bold',
             marginTop: 70,
             marginBottom: 20,
-
+            marginLeft: 150,
+            color: 'white',
         },
-        profilePicContainer: {
-            alignItems: 'center',
-            marginVertical: 50,
-            flex: 1,
-            marginBottom: 2,
 
-        },
         cont: {
 
             borderRadius: 50,
             marginTop: 60,
         },
-        profilePic: {
-            width: 100,
-            height: 100,
-            borderRadius: 50,
-            marginBottom: 20,
-        },
+
         input: {
             borderWidth: 1,
             borderColor: 'black',
@@ -145,17 +136,37 @@ export default function Account() {
             <Text style={styles.header}>My Profile</Text>
             <TouchableOpacity onPress={changeProfilePicture}>
                 <Image source={require('../assets/images/profile.jpeg')}
-                    style={{ height: hp(7), width: hp(7) }}
+                    style={{ height: hp(7.5), width: hp(7.5) }}
                     className="rounded-full  ml-44 mt-10" />
-                <Text className="ml-40 mt-5">Change Picture</Text>
+                <Text className="ml-40 mt-5 text-white">Change Picture</Text>
             </TouchableOpacity>
             <View style={styles.cont}>
                 <TextInput style={styles.input} value={username} onChangeText={setUsername} placeholder="Username" />
                 <TextInput style={styles.input} value={email} editable={false} placeholder="Email" />
                 <TextInput style={styles.input} value={phone} onChangeText={setPhone} placeholder="Phone" />
                 <TextInput style={styles.input} value={location} onChangeText={setLocation} placeholder="Location" />
-                <Button title="Save" onPress={handleSave} />
-                <Button title="Back" onPress={() => router.push('/home')} />
+                <TouchableOpacity
+                    onPress={handleSave}
+                    style={{
+                        padding: 8,
+                        borderRadius: 5,
+                        alignItems: 'center',
+                        marginBottom: 5
+                    }}
+                >
+                    <Text style={{ color: '#C2185B', fontSize: 16 }}>Save</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => router.push('/home')}
+                    style={{
+                        padding:8,
+                        borderRadius: 5,
+                        alignItems: 'center'
+                    }}
+                >
+                    <Text style={{ color: '#C2185B', fontSize: 16 }}>Back</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );

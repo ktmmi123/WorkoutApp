@@ -37,7 +37,7 @@ const BodyPartCard = ({item, router, index})=>{
     return (
         <View>
             <TouchableOpacity
-                onPress={()=>router.push({pathname: '/exercises', params: item})}
+               onPress={() => router.push('/exercises', { params: { category: item.name } })}
                 style={{width: widthPercentageToDP(44), height: widthPercentageToDP(52)}}
                 className="flex justify-end p-4 mb-4">
                     <Image
